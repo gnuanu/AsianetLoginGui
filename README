@@ -1,0 +1,35 @@
+AsianetLoginGui
+===============
+
+A python script for logging in to Asianet, and a simple GUI for using it, written in PyQt.
+
+For using the script from command line
+--------------------------------------
+
+edit the file asianetloginmain.py and give your username and passord in the __main__ section, then run
+
+$ python asianetloginmain.py
+
+For using the GUI, run
+----------------------
+
+$ python asianetlogin.py
+
+Copyright
+---------
+Copyright (c) 2010 Anoop Panavalappil, All rights reserved.
+This project is licenced under GNU Generel Public Licence Version 3 or later.
+Anybody can copy, change, redistribute this application by keeping the licence intact.
+
+Important
+---------
+
+1) if you make any change to the UI file asianetlogin.ui, make sure that you run the command
+
+$ pyuic4 asianetlogin.ui -o ui_asianetlogin.py
+
+2) The username and password will be saved in plain text format. No encryption is applied.
+
+_________________________________________________________________________________________________________
+
+Please send your Suggestions / Improvements / Bug reports to gnuanu@gmail.com
