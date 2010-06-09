@@ -1,7 +1,7 @@
 '''
 Created on Jun 7, 2010
 
-@author: kannan
+@author: Anoop Panavalappil
 '''
 from ui_asianetlogin import Ui_AsianetLogin
 from asianetloginmain import AsianetLoginMain
@@ -22,10 +22,10 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 			self.edUsername.setText(data[0])
 			self.edPassword.setText(data[1])
 			file.close()
-			
+		
 		self.connect(self.bnClose, QtCore.SIGNAL("clicked()"), self.close)
 		self.connect(self.bnConnect, QtCore.SIGNAL("clicked()"), self.onConnect)
-		
+
 	def onConnect(self):
 		if self.edUsername.text() == "" or self.edPassword.text() == "":
 			QtGui.QMessageBox.warning(self, "Error - AsianetLogin", "Username and Password are mandatory fields")
@@ -35,15 +35,15 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 			file = open("asianetconf", 'w')
 			file.write(self.edUsername.text() + "=" + self.edPassword.text())
 			file.close()
-			
-		login = AsianetLoginMain(self.edUsername.text(), self.edPassword.text(), self)
-		login.connectAsianet()
+		
+		self.login = AsianetLoginMain(self.edUsername.text(), self.edPassword.text(), self)
+		self.connect(self.login.log, QtCore.SIGNAL("displayMessage(QString)"), self.displayLog)	
+		self.login.connectAsianet()
 			
 	def displayLog(self, log):
 		display_log = self.teLog.toPlainText()
-		display_log += log + "\n"
+		display_log += log
 		self.teLog.setText(display_log)
-		self.teLog.update()
 		scrollbar = self.teLog.verticalScrollBar()
 		scrollbar.setValue(scrollbar.maximum())
 		
