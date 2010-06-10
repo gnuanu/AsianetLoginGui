@@ -16,7 +16,8 @@ class Log(QtCore.QThread):
 		logfile = "asianet_log"
 		self.log = open(logfile, 'a')
 		
-	def writeLog(self, message):
+	def initialize(self, message):
+		print message
 		self.logmsg = time.ctime() + " - " + message + '\n'
 		self.log.write(self.logmsg)
 		
@@ -38,7 +39,7 @@ class AsianetLoginMain:
 		self.log = Log()
 		
 	def connectAsianet(self):
-		self.log.writeLog("Starting Asianet auto login...")
+		self.log.initialize("Starting Asianet auto login...")
 		self.log.start()
 		self.log.wait()
 			
@@ -48,11 +49,11 @@ class AsianetLoginMain:
 		conn = httplib.HTTPConnection(check_url)
 		
 		try:
-			self.log.writeLog("Checking current connection status")
+			self.log.initialize("Checking current connection status")
 			self.log.start()
 			self.log.wait()
 			
-			self.log.writeLog("Connecting to " + check_url)
+			self.log.initialize("Connecting to " + check_url)
 			self.log.start()
 			self.log.wait()
 			
@@ -61,45 +62,45 @@ class AsianetLoginMain:
 			res = conn.getresponse()
 			conn.close()
 			
-			self.log.writeLog("Response = {0}".format(httplib.responses[res.status]))
+			self.log.initialize("Response = {0}".format(httplib.responses[res.status]))
 			self.log.start()
 			self.log.wait()
 			
 			if res.status == 200 or res.status == 202:
-				self.log.writeLog("An active connection is already present")
+				self.log.initialize("An active connection is already present")
 				self.log.start()
 				self.log.wait()
 				
 			if res.status == 302:
-				self.log.writeLog("Couldn't connect to google")
+				self.log.initialize("Couldn't connect to google")
 				self.log.start()
 				self.log.wait()
 				
 				login_url = res.getheader('location').split("?")[0]
 				self.loginToInternet(login_url)
 		except:
-			self.log.writeLog("Network error. Check your connection")
+			self.log.initialize("Network error. Check your connection")
 			self.log.start()
 			self.log.wait()
 			
 	def loginToInternet(self, login_url):
-		self.log.writeLog("Logging in to Asianet..")
+		self.log.initialize("Logging in to Asianet..")
 		self.log.start()
 		self.log.wait()
 		
 		self.saveLoginUrl(login_url)
 		params = urllib.urlencode({'auth_user': self.username, 'auth_pass': self.password, 'accept': self.accept})
 		response = urllib.urlopen(login_url, params).info()
-		self.log.writeLog("Response = {0}".format(response))
+		self.log.initialize("Response = {0}".format(response))
 		self.log.start()
 		self.log.wait()
 		
 		if response.status == 200 or response.status == 202 or response.status == "":
-			self.log.writeLog("Login Successful")
+			self.log.initialize("Login Successful")
 			self.log.start()
 			self.log.wait()
 		else:
-			self.log.writeLog("Login Failed. Try again later..")
+			self.log.initialize("Login Failed. Try again later..")
 			self.log.start()
 			self.log.wait()
 			

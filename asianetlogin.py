@@ -44,6 +44,7 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 		display_log = self.teLog.toPlainText()
 		display_log += log
 		self.teLog.setText(display_log)
+		self.teLog.update()
 		scrollbar = self.teLog.verticalScrollBar()
 		scrollbar.setValue(scrollbar.maximum())
 		
