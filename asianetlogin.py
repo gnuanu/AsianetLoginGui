@@ -1,8 +1,8 @@
 #========================================================================#
-# File Name		: asianetlogin.py
-# Date			: Jun 7, 2010
-# Author		: Anoop Panavalappil
-# Description	: Asianet Login GUI Class Implementation
+# File Name    : asianetlogin.py
+# Date         : Jun 7, 2010
+# Author       : Anoop Panavalappil
+# Description  : Asianet Login GUI Class Implementation
 #========================================================================#
 
 """
@@ -27,8 +27,8 @@ If you find any bugs or have any suggestions email: gnuanu@gmail.com
 URL: http://www.librecode.org
 """
 
-from ui_asianetlogin import Ui_AsianetLogin		# The generated UI class
-from asianetloginmain import AsianetLoginMain	# The main class
+from ui_asianetlogin import Ui_AsianetLogin      # The generated UI class
+from asianetloginmain import AsianetLoginMain    # The main class
 
 from PyQt4 import QtCore, QtGui
 
@@ -66,6 +66,7 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 			file.write(self.edUsername.text() + "=" + self.edPassword.text())
 			file.close()
 			
+		# Check whether the thread is running or not
 		if not self.running:			
 			self.login.initialize(self.edUsername.text(), self.edPassword.text())
 			self.login.start()

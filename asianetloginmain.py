@@ -1,8 +1,8 @@
 #========================================================================#
-# File Name		: asianetloginmain.py
-# Date			: Jun 7, 2010
-# Author		: Anoop Panavalappil
-# Description	: Asianet Login Main Class Implementation (command line)
+# File Name    : asianetloginmain.py
+# Date         : Jun 7, 2010
+# Author       : Anoop Panavalappil
+# Description  : Asianet Login Main Class Implementation (Command Line)
 #========================================================================#
 
 """

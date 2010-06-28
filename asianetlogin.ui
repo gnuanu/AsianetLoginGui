@@ -25,7 +25,11 @@
   <property name="windowTitle">
    <string>Asianet Login</string>
   </property>
-  <widget class="QWidget" name="">
+  <property name="windowIcon">
+   <iconset resource="asianetlogin.qrc">
+    <normaloff>:/images/images/logo16.png</normaloff>:/images/images/logo16.png</iconset>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -111,6 +115,8 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="asianetlogin.qrc"/>
+ </resources>
  <connections/>
 </ui>
