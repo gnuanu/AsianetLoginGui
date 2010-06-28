@@ -28,8 +28,16 @@ Important
 
 $ pyuic4 asianetlogin.ui -o ui_asianetlogin.py
 
+2) if you make any change to the Resouce file asianetlogin.qrc make sure that you run the command
+
+$ pyrcc4 asianetlogin.qrc -o asianetlogin_rc.py
+
 2) The username and password will be saved in plain text format. No encryption is applied.
 
+Updates
+--------
+Added window icon
+The icon was designed by Hiran Venugopalan <hiran.v@gmail.com> <http://hiran.in>
 _________________________________________________________________________________________________________
 
 Please send your Suggestions / Improvements / Bug reports to gnuanu@gmail.com
