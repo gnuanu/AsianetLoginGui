@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'asianetlogin.ui'
 #
-# Created: Tue Jun 29 00:09:39 2010
+# Created: Tue Jun 29 23:20:49 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -16,7 +16,7 @@ class Ui_AsianetLogin(object):
         AsianetLogin.setMinimumSize(QtCore.QSize(521, 211))
         AsianetLogin.setMaximumSize(QtCore.QSize(521, 211))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/images/images/logo16.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/images/images/logo128.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         AsianetLogin.setWindowIcon(icon)
         self.layoutWidget = QtGui.QWidget(AsianetLogin)
         self.layoutWidget.setGeometry(QtCore.QRect(10, 10, 501, 191))
@@ -49,6 +49,9 @@ class Ui_AsianetLogin(object):
         self.bnClose = QtGui.QPushButton(self.layoutWidget)
         self.bnClose.setObjectName("bnClose")
         self.horizontalLayout_2.addWidget(self.bnClose)
+        self.bnAbout = QtGui.QPushButton(self.layoutWidget)
+        self.bnAbout.setObjectName("bnAbout")
+        self.horizontalLayout_2.addWidget(self.bnAbout)
         self.bnConnect = QtGui.QPushButton(self.layoutWidget)
         self.bnConnect.setObjectName("bnConnect")
         self.horizontalLayout_2.addWidget(self.bnConnect)
@@ -67,6 +70,7 @@ class Ui_AsianetLogin(object):
         self.lbPassword.setText(QtGui.QApplication.translate("AsianetLogin", "Password", None, QtGui.QApplication.UnicodeUTF8))
         self.chkRemember.setText(QtGui.QApplication.translate("AsianetLogin", "Remember", None, QtGui.QApplication.UnicodeUTF8))
         self.bnClose.setText(QtGui.QApplication.translate("AsianetLogin", "Close", None, QtGui.QApplication.UnicodeUTF8))
+        self.bnAbout.setText(QtGui.QApplication.translate("AsianetLogin", "About", None, QtGui.QApplication.UnicodeUTF8))
         self.bnConnect.setText(QtGui.QApplication.translate("AsianetLogin", "Connect", None, QtGui.QApplication.UnicodeUTF8))
 
 import asianetlogin_rc

@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="asianetlogin.qrc">
-    <normaloff>:/images/images/logo16.png</normaloff>:/images/images/logo16.png</iconset>
+    <normaloff>:/images/images/logo128.png</normaloff>:/images/images/logo128.png</iconset>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -93,6 +93,13 @@
        <widget class="QPushButton" name="bnClose">
         <property name="text">
          <string>Close</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="bnAbout">
+        <property name="text">
+         <string>About</string>
         </property>
        </widget>
       </item>

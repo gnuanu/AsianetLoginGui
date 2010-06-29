@@ -41,7 +41,6 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 		self.setupUi(self)
 		self.running = False
 		
-		
 		if os.path.exists("asianetconf"):
 			file = open("asianetconf", 'r')
 			text = file.readline()
@@ -55,6 +54,17 @@ class AsianetLogin(QtGui.QDialog, Ui_AsianetLogin):
 		
 		self.connect(self.bnClose, QtCore.SIGNAL("clicked()"), self.close)
 		self.connect(self.bnConnect, QtCore.SIGNAL("clicked()"), self.onConnect)
+		self.connect(self.bnAbout, QtCore.SIGNAL("clicked()"), self.onAbout)
+	
+	def onAbout(self):
+		aboutstring = """<b>AsianetLogin - Asianet Broadband Login Utility</b><br><br>
+                     Version 1.0.0<br>
+                     Copyright (c) 2010 Anoop Panavalappil [<a href="mailto:gnuanu@gmail.com">gnuanu@gmail.com</a>]<br><br>
+                     Icon Designed by Hiran Venugopalan [<a href="mailto:hiran.v@gmail.com">hiran.v@gmail.com</a>]<br>
+                     <a href="http://hiran.in">http://hiran.in</a><br><br>
+                     <a href="http://github.com/gnuanu/AsianetLoginGui">github repository</a><br>
+                     <a href="http://www.gnu.org/licenses/gpl.html">License - GNU General Public License Version - 3</a>"""
+		QtGui.QMessageBox.about(self, "About AsianetLogin", aboutstring)
 	
 	def onConnect(self):
 		if self.edUsername.text() == "" or self.edPassword.text() == "":
